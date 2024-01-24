@@ -117,6 +117,7 @@ func TestGzipCompression(t *testing.T) {
         "version": "1.0"
     }`
 
+	// asd
 	t.Run("sends_gzip", func(t *testing.T) {
 		buf := bytes.NewBuffer(nil)
 		zb := gzip.NewWriter(buf)
