@@ -7,8 +7,17 @@ const (
 // Request описывает запрос пользователя.
 // см. https://yandex.ru/dev/dialogs/alice/doc/request.html
 type Request struct {
-	Request SimpleUtterance `json:"request"`
-	Version string          `json:"version"`
+	Request  SimpleUtterance `json:"request"`
+	Version  string          `json:"version"`
+	Session  *Session        `json:"session"`
+	Timezone string          `json:"timezone"`
+}
+
+type Session struct {
+	New  bool `json:"new"`
+	User struct {
+		UserID string
+	}
 }
 
 // SimpleUtterance описывает команду, полученную в запросе типа SimpleUtterance.
