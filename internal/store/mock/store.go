@@ -40,19 +40,19 @@ func (m *MockStore) EXPECT() *MockStoreMockRecorder {
 	return m.recorder
 }
 
-// FindRecipient mocks base method.
-func (m *MockStore) FindRecipient(ctx context.Context, username string) (string, error) {
+// FindRecepient mocks base method.
+func (m *MockStore) FindRecepient(ctx context.Context, username string) (string, error) {
 	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "FindRecipient", ctx, username)
+	ret := m.ctrl.Call(m, "FindRecepient", ctx, username)
 	ret0, _ := ret[0].(string)
 	ret1, _ := ret[1].(error)
 	return ret0, ret1
 }
 
-// FindRecipient indicates an expected call of FindRecipient.
-func (mr *MockStoreMockRecorder) FindRecipient(ctx, username any) *gomock.Call {
+// FindRecepient indicates an expected call of FindRecepient.
+func (mr *MockStoreMockRecorder) FindRecepient(ctx, username any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "FindRecipient", reflect.TypeOf((*MockStore)(nil).FindRecipient), ctx, username)
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "FindRecepient", reflect.TypeOf((*MockStore)(nil).FindRecepient), ctx, username)
 }
 
 // GetMessage mocks base method.
@@ -83,6 +83,20 @@ func (m *MockStore) ListMessages(ctx context.Context, userID string) ([]store.Me
 func (mr *MockStoreMockRecorder) ListMessages(ctx, userID any) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListMessages", reflect.TypeOf((*MockStore)(nil).ListMessages), ctx, userID)
+}
+
+// RegisterUser mocks base method.
+func (m *MockStore) RegisterUser(ctx context.Context, userID, username string) error {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "RegisterUser", ctx, userID, username)
+	ret0, _ := ret[0].(error)
+	return ret0
+}
+
+// RegisterUser indicates an expected call of RegisterUser.
+func (mr *MockStoreMockRecorder) RegisterUser(ctx, userID, username any) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "RegisterUser", reflect.TypeOf((*MockStore)(nil).RegisterUser), ctx, userID, username)
 }
 
 // SaveMessage mocks base method.
